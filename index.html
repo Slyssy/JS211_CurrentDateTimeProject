@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title></title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="main.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
-    <hr/>
+    <div class="page-container">
+      <h1>Hello World!</h1>
+      <hr />
+      <div id="display-date">
+        <div id="display-element"></div>
+        <button onclick="displayDate()">Date</button>
+      </div>
+      <hr />
+      <div id="num-to-string">
+        <h2>Converting numbers to strings</h2>
+        <div class="num-to-string-content">
+          <label for="number-string-1">Enter First Number</label>
+          <input type="number" id="number-string-1" />
+          <label for="number-string-2">Enter Second Number</label>
+          <input type="number" id="number-string-2" />
+          <button onclick="numToString()">Add Values</button>
+        </div>
+        <div class="image-container">
+          <img src="./images/num-to-string.png" alt="code-snippet" />
+        </div>
+        <div class="display-num-to-string"></div>
+      </div>
+      <hr />
+      <div id="string-to-num">
+        <h2>Converting Strings to numbers</h2>
+        <div class="string-to-num-content">
+          <p>
+            Input values are always strings. We can still use their values to do
+            math by converting the input values to numbers.
+          </p>
+          <label for="string-number-1">Enter a Number</label>
+          <input type="text" id="string-number-1" />
+          <label for="string-number">Enter a Number</label>
+          <input type="text" id="string-number-2" />
+          <div id="num-to-string-2"></div>
+          <button onclick="stringToNumber()">Add Values</button>
+        </div>
+        <div class="image-container">
+          <img src="./images/string-to-num.png" alt="code-snippet" />
+        </div>
+        <div class="display-string-to-number"></div>
+      </div>
+      <hr />
+    </div>
   </body>
 </html>
