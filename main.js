@@ -4,7 +4,6 @@
 //          PART ONE
 // ***************************
 // Write a JavaScript program to display the current day and time, start with:
-console.log(new Date());
 
 const displayDate = () => {
   const currentDate = new Date();
@@ -13,94 +12,148 @@ const displayDate = () => {
 };
 
 // Write a JavaScript program to convert a number to a string.
-const numToString = (num1, num2) => {
-  num1 = +document.querySelector('#number-string-1').value;
-  num2 = +document.querySelector('#number-string-2').value;
-  const displayResults = document.querySelector('.display-num-to-string');
+let emptyValue;
+const doesNotExist = document.querySelector('.does-not-exist');
+let input1;
+let input2;
+let typeOfButton;
+
+//# Write a JavaScript program that adds 2 numbers together.
+const sumTwoValues = (a, b) => a + b;
+
+const allFunctions = (input1, input2) => {
+  // // ? Saving the user inputs to to variables.
+  // // ? These inputs are automatically strings.
+  input1 = document.querySelector('#number-string-1').value;
+  input2 = document.querySelector('#number-string-2').value;
+  //# Converting strings to numbers by simply adding the "+" sign.
+  const input1Number = +input1;
+  const input2Number = +input2;
+  //# You can convert them back to strings by using the toString() method.
+  const input1String = input1Number.toString();
+  const input2String = input2Number.toString();
+  // ?Selecting the area where the results will be displayed.
+  const displayResults = document.querySelector('.display-results');
+  // ?Clearing the display area.
+  displayResults.innerHTML = '';
   displayResults.insertAdjacentHTML(
     'afterbegin',
-    `<p>This is the result of adding 2 numbers together.</p>
-    <p>${num1} + ${num2} = ${num1 + num2}</p>
-    <p>This is the result of adding 2 numbers that have been converted to strings.</p>
-    ${num1} + ${num2} = ${num1.toString() + num2.toString()}`
+    `    
+    <h2 class="results-title">Results</h2>
+    <p class="results-description">This is the result of adding 2 numbers together.</p>
+  
+    <p class="results">${input1String} + ${input2String} = ${
+      // #Calling the sumTwoNumbers function to add the values.
+      sumTwoValues(input1Number, input2Number)
+    }</p>
+    <p class="results-description">This is the result of adding 2 numbers that have been converted to strings.</p>
+    <p class="results" >${input1Number} + ${input2Number} = ${sumTwoValues(
+      input1String,
+      input2String
+    )}</p>
+      <h4>Now lets play with the inputs.</h4>
+      <p class="results-description">Set the inputs to equal the same value and click the button below.</p>
+      <button id=type-of-button>Click to Learn More</button>
+    `
   );
-
-  // console.log(
-  //   `User input of ${num.toString()} has been converted a ${typeof num.toString()}`
-  // );
 };
-// numToString(18);
-// Write a JavaScript program to convert a string to the number.
-const stringToNumber = (input1, input2) => {
-  input1 = document.querySelector('#string-number-1').value;
-  input2 = document.querySelector('#string-number-2').value;
 
-  const displayResults = document.querySelector('.display-string-to-number');
-  displayResults.insertAdjacentHTML(
+const showMoreExamples = (input1, input2) => {
+  input1 = +document.querySelector('#number-string-1').value;
+  input2 = +document.querySelector('#number-string-2').value;
+  const boolean =
+    input1 + input2 === sumTwoValues(input1.toString(), input2.toString());
+  const nothing = emptyValue;
+  const displayMoreResults = document.querySelector('.display-more-results');
+  displayMoreResults.insertAdjacentHTML(
     'afterbegin',
-    `<p>Without converting these numbers the value of adding them together will look like this.</p>
-  <p>${input1} + ${input2} = ${input1 + input2}</p>
-  <p>We have concatenated two strings.</p>
-  <h4>Fear Not! We can easily convert these strings to numbers.</h4>
-  <p>After converting them to numbers, we can do math on them.</p>
-  ${+input1} + ${+input2} = ${+input1 + +input2}`
+    `<p> Does ${input1} equal ${input2.toString()}? <span class="answer">${boolean}</span>
+    </p>
+    <p class="question">Why not?</p>
+    <h5>Let's look at the data types.</h5>
+    <p class="results-description">Data type of input 1? : <span class="answer">${
+      //# Getting the typeof Number.
+      typeof input1
+    }</span></p>
+    <p class="results-description">Data type of input 2?: <span class="answer">${
+      //# Getting the typeof String.
+      typeof input2.toString()
+    }</span></p>
+    <p class="results-description">Data type of the boolean? : <span class="answer">${typeof boolean}</span></p>
+    <h5>Now let's try doing some math on values that are numbers and strings.</h5>
+    <p>Strings can be converted to number if the values are numbers, but not words.</p>
+    <p class="results">(${input1} + five) x 2 = <span class="answer">${
+      (input1 + 'five') * 2
+    }</span></p>
+    <p>Since 'five' is a string, you cannot continue to do math. And NaN is returned.</p>
+    <h5>Let's look at this data type.</h5>
+    <p>Data type of (${
+      //# Getting the type of NaN.
+      input1
+    } + five) x 2: <span class="answer">${typeof (
+      (input1 + 'five') *
+      2
+    )}</span></span></p>
+    <p>That's weird. The type of NaN is still number.</p>
+    <p>To learn why this is the case <a href="https://bitsofco.de/javascript-typeof/">click here</a>.</p>
+    <h5>Other data types include 'Null' and 'Undefined'</h5>
+    <p class="results-description">Data type of something that does not exist: <span class="answer">${
+      //#Getting the type of Undefined.
+      typeof nothing
+    }</span></p>
+    <p>The typeof 'null' may not give you the output you expect.</p>
+    <p>For example, if I try to select an HTML element that doesn't exist...</p>
+    <p class="select-element"><span class="const">const </span><span class="variable">doesNotExist</span> = <span class="document">document</span>.<span class="query">querySelector</span>(<span class="selector">'.does-not-exist'</span>)</p>
+    <p class="results-description">Data type of 'null'? <span class="answer">${
+      //# Getting the type of Null.
+      typeof doesNotExist
+    }</span></p>
+    <p><a href="https://dmitripavlutin.com/javascript-null/">Click here</a> to learn more about "null" in JavaScript.</p>
+    <button class="clear-button">Clear</button>
+    `
   );
 };
 
-// Write a JavaScript program that takes in different datatypes and prints out whether they are a:
-// * Boolean
-// * Null
-// * Undefined
-// * Number
-// * NaN
-// * String
+//? Adding an event listener to the button I created in the insertAdjacent HTML.
+document.addEventListener('click', function (event) {
+  if (event.target.id == 'type-of-button') {
+    showMoreExamples(input1, input2);
+  }
+});
 
-const dataType = (data) => typeof data;
-console.log(dataType(0 === 1));
-console.log(dataType());
-console.log(dataType(18));
-console.log(dataType(NaN));
-console.log(dataType('cat'));
+//? Adding event litener to clear divs.
+document.addEventListener('click', function (event) {
+  if (event.target.classList == 'clear-button') {
+    const displayResults = document.querySelector('.display-results');
+    // ?Clearing the display area.
+    displayResults.innerHTML = '';
+    const displayMoreResults = document.querySelector('.display-more-results');
+    displayMoreResults.innerHTML = '';
+  }
+});
 
-// Write a JavaScript program that adds 2 numbers together.
-const sumTwoNumbers = (a, b) => a + b;
-console.log(sumTwoNumbers(16, 22));
+//# Write a JavaScript program that runs only when 2 things are true.
+changeBackground = (item1, item2) => {
+  const word1 = document.querySelector('#enter-word-1').value;
+  const word2 = document.querySelector('#enter-word-2').value;
 
-// Write a JavaScript program that runs only when 2 things are true.
-if2True = (item1, item2) => {
-  if (item1 && item2) {
-    console.log('Both things are true');
-  } else {
-    console.log(`I'm not doing anything`);
+  const background = document.querySelector('.conditionals');
+  //# Write a JavaScript program that runs only when 2 things are true.
+  if (word1 === 'blue' && word2 === 'blue') {
+    background.style.backgroundColor = 'lightblue';
+  }
+  //# Write a JavaScript program that runs when 1 thing is true.
+  else if (word1 === 'pink' || word2 === 'pink') {
+    background.style.backgroundColor = 'lightpink';
+  }
+  //# Write a JavaScript program that runs only when 2 things are NOT true.
+  else if (
+    (word1 !== 'pink' || word1 !== 'blue') &&
+    (word2 !== 'pink' || word2 !== 'blue')
+  ) {
+    background.style.backgroundColor = 'lightgrey';
   }
 };
-
-if2True(2 + 2 === 4, 2 + 3 === 5);
-if2True(2 + 2 === 5, 2 + 3 === 5);
-// Write a JavaScript program that runs when 1 of 2 things are true.
-if1True = (item1, item2) => {
-  if (item1 || item2) {
-    console.log('At least one thing is true');
-  } else {
-    console.log(`I'm not doing anything`);
-  }
-};
-if1True(2 + 2 === 5, 2 + 3 === 5);
-if1True(2 + 2 === 5, 2 + 3 === 6);
-if1True(2 + 2 === 4, 2 + 3 === 5);
-
-// Write a JavaScript program that runs when both things are not true.
-
-if0True = (item1, item2) => {
-  if (!item1 && !item2) {
-    console.log(`I'm a liar!`);
-  } else {
-    console.log(`If I'm not lying, I'm not living.`);
-  }
-};
-if0True(2 + 2 === 4, 2 + 3 === 5);
-if0True(2 + 2 === 5, 2 + 3 === 5);
-if0True(2 - 2 === 5, 2 - 3 === 6);
 
 // ***************************
 //         PART TWO

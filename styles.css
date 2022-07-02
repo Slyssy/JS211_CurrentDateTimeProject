@@ -1,58 +1,237 @@
-.page-container {
-  width: 90%;
-  margin: 2em auto;
+:root {
+  --primary-result: #046fe2;
+  --secondary-result: #c405ba;
+  --turquoise: #1fd0bf;
 }
 
-#num-to-string {
-  display: grid;
-  grid-template-columns: 500px 700px;
+/* !Global Element Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#num-to-string h2 {
-  grid-column: span 2;
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-align: center;
 }
 
-.num-to-string-content {
-  width: 60%;
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 1.4em;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.9em;
+  text-align: center;
+}
+
+/* !Page Section Styles */
+.page-container {
+  width: 90%;
+  margin: 2em auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1em;
+}
+
+.section-content {
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1em;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-container label {
+  font-size: 14px;
+}
+
+.input-container input {
+  width: 20%;
+  font-size: 14px;
+  text-align: center;
 }
 
 .image-container {
   width: 100%;
+  grid-row: 2;
 }
 
 .image-container img {
   width: 100%;
+  border-radius: 10px;
 }
 
-#string-to-num {
+button {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  max-width: 155px;
+  padding: 0.5em;
+  background-color: #e26f04;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(1);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+/* !Display Results Section Styling */
+.display-results {
   display: grid;
-  grid-template-columns: 700px 500px;
-}
-
-#string-to-num .image-container {
-  grid-column: 1;
-  grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#string-to-num h2 {
-  grid-column: span 2;
-  text-align: center;
-}
-
-.string-to-num-content {
-  grid-column: 2;
-  width: 60%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  grid-template-columns: 1fr;
   gap: 1em;
 }
+.results-description {
+  font-style: oblique;
+}
+.results {
+  color: var(--primary-result);
+  font-weight: 500;
+}
+
+.answer {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-result);
+}
+
+/* !Display More Results Section Styling */
+.display-more-results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+.question {
+  font-weight: 700;
+  color: var(--turquoise);
+  font-size: 18px;
+}
+
+.select-element {
+  font-style: oblique;
+}
+.const {
+  color: purple;
+}
+
+.variable {
+  color: orangered;
+}
+
+.document {
+  color: crimson;
+}
+
+.query {
+  color: rgb(193, 181, 46);
+}
+
+.selector {
+  color: limegreen;
+}
+.data-type-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 1em;
+}
+
+.conditionals {
+  margin-bottom: 3em;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {
+  #num-to-string {
+    display: grid;
+    grid-template-columns: 500px 700px;
+  }
+
+  #num-to-string h2 {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .num-to-string-content {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  #string-to-num {
+    display: grid;
+    grid-template-columns: 700px 500px;
+  }
+
+  #string-to-num .image-container {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #string-to-num h2 {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .string-to-num-content {
+    grid-column: 2;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1em;
+  }
+} */

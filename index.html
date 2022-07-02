@@ -8,48 +8,50 @@
   </head>
   <body>
     <div class="page-container">
-      <h1>Hello World!</h1>
-      <hr />
+      <h1>JS211: Current Date Time Project</h1>
       <div id="display-date">
         <div id="display-element"></div>
         <button onclick="displayDate()">Date</button>
       </div>
       <hr />
-      <div id="num-to-string">
-        <h2>Converting numbers to strings</h2>
-        <div class="num-to-string-content">
-          <label for="number-string-1">Enter First Number</label>
-          <input type="number" id="number-string-1" />
-          <label for="number-string-2">Enter Second Number</label>
-          <input type="number" id="number-string-2" />
-          <button onclick="numToString()">Add Values</button>
+      <section id="num-string-typeof" class="section-1">
+        <h2>Numbers, Strings and typeof</h2>
+        <div class="section-content">
+          <h3>
+            Here we will enter 2 numbers and click the button to add them
+            together.
+          </h3>
+          <div class="input-container">
+            <label for="number-string-1">Enter First Number</label>
+            <input type="string" id="number-string-1" />
+          </div>
+          <div class="input-container">
+            <label for="number-string-2">Enter Second Number</label>
+            <input type="string" id="number-string-2" />
+          </div>
+          <button onclick="allFunctions()">Add Values</button>
         </div>
         <div class="image-container">
           <img src="./images/num-to-string.png" alt="code-snippet" />
         </div>
-        <div class="display-num-to-string"></div>
-      </div>
+        <div class="display-results"></div>
+        <div class="display-more-results"></div>
+      </section>
       <hr />
-      <div id="string-to-num">
-        <h2>Converting Strings to numbers</h2>
-        <div class="string-to-num-content">
-          <p>
-            Input values are always strings. We can still use their values to do
-            math by converting the input values to numbers.
-          </p>
-          <label for="string-number-1">Enter a Number</label>
-          <input type="text" id="string-number-1" />
-          <label for="string-number">Enter a Number</label>
-          <input type="text" id="string-number-2" />
-          <div id="num-to-string-2"></div>
-          <button onclick="stringToNumber()">Add Values</button>
+      <section class="conditionals">
+        <h2>Working with Conditionals</h2>
+        <p>If both words equal blue, the background will turn blue.</p>
+        <p>If only one word equals pink, the background will turn pink.</p>
+        <div class="input-container">
+          <label for="enter-word-1">Enter First Word</label>
+          <input type="string" id="enter-word-1" />
         </div>
-        <div class="image-container">
-          <img src="./images/string-to-num.png" alt="code-snippet" />
+        <div class="input-container">
+          <label for="enter-word-2">Enter Second Word</label>
+          <input type="string" id="enter-word-2" />
         </div>
-        <div class="display-string-to-number"></div>
-      </div>
-      <hr />
+        <button onclick="changeBackground()">Change Background</button>
+      </section>
     </div>
   </body>
 </html>
