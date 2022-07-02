@@ -180,6 +180,7 @@ button:active {
 
 .conditionals {
   margin-bottom: 3em;
+  padding: 2em 0;
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -201,6 +202,20 @@ button:active {
     width: 40%;
   }
   .check-background-btn {
+    grid-column: span 2;
+  }
+
+  .display-results {
+    margin-top: 30px;
+    grid-column: span 2;
+  }
+
+  p {
+    grid-column: span 2;
+  }
+
+  .display-more-results {
+    margin-top: 30px;
     grid-column: span 2;
   }
 }
