@@ -50,9 +50,15 @@ p {
 
 #display-date {
   width: 100%;
+  height: 80px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.date {
+  color: var(--primary-result);
 }
 section {
   display: grid;
