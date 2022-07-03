@@ -48,6 +48,12 @@ p {
   gap: 2em;
 }
 
+#display-date {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 section {
   display: grid;
   grid-template-columns: 1fr;

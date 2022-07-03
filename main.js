@@ -6,9 +6,21 @@
 // Write a JavaScript program to display the current day and time, start with:
 
 const displayDate = () => {
-  const currentDate = new Date();
+  const date = new Date();
+  const currentDate = date.toLocaleDateString('en-us', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
 
-  document.getElementById('display-element').innerHTML = currentDate;
+  const displayDate = document.getElementById('display-element');
+  displayDate.insertAdjacentHTML(
+    'afterbegin',
+    `
+  <h4 class="date">${currentDate}</h4>
+  `
+  );
 };
 
 // Write a JavaScript program to convert a number to a string.
