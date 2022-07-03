@@ -15,6 +15,7 @@ const displayDate = () => {
   });
 
   const displayDate = document.getElementById('display-element');
+  displayDate.innerHTML = '';
   displayDate.insertAdjacentHTML(
     'afterbegin',
     `
